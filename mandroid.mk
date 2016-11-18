@@ -8,8 +8,7 @@ PRODUCT_MODEL:= Android
 
 
 PRODUCT_PACKAGE_OVERLAYS:= device/utbm/mandroid/overlay
-PRODUCT_COPY_FILES+= device/utbm/mandroid/bootanimation.zip:out/target/product/mandroid/system/media/bootanimation.zip
+PRODUCT_COPY_FILES+= device/utbm/mandroid/bootanimation.zip:/system/media/bootanimation.zip
 
-
-PRODUCT_PACKAGE += com.mandroid.Missile\
-		   com.mandroid.Missile.xml
+PRODUCT_PACKAGES += com.mandroid.Missile \
+			com.mandroid.Missile.xml

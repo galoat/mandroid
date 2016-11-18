@@ -1,3 +1,4 @@
+LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
 commonSources:=  liusbx-1.0.9/libusb/io.c \
                   liusbx-1.0.9/libusb/core.c \
@@ -12,5 +13,4 @@ LOCAL_SRC_FILES += \
 LOCAL_MODULE:= libusb
 LOCAL_MODULE_TAGS:= optional
 
-include $(BUILD_SHARED_LIBRARY)
-~                               
+include $(BUILD_SHARED_LIBRARY)     
