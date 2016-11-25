@@ -17,7 +17,7 @@
 static struct libusb_device_handle **devh;
 int nbr_device;
 
-int mlbin_init_usb(void)
+JNIEXPORT jint JNICALL Java_com_mandroid_libMis_Missile_mlbinInitUsb(JNIEnv* envi,jobject obj)
 {
 	libusb_device **list;
 	libusb_device **devices = NULL;
@@ -101,7 +101,7 @@ error:
 	exit(1);
 }
 
-int mlbin_free_usb(void)
+JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinFreeUsb(JNIEnv* env, jobject obj)
 {
 	int i;
 	for (i = 0; i < nbr_device; i++) {
@@ -113,7 +113,7 @@ int mlbin_free_usb(void)
 	return 0;
 }
 
-int mlbin_fire(int device)
+JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinFire(JNIEnv* env, jobject obj,jint device)
 {
 	if (device == -1) {
 		int i;
@@ -130,7 +130,7 @@ int mlbin_fire(int device)
 	return 0;
 }
 
-int mlbin_move_down(int device)
+JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveDown(JNIEnv* env, jobject obj,jint device )
 {
 	if (device == -1) {
 		int i;
@@ -147,7 +147,7 @@ int mlbin_move_down(int device)
 	return 0;
 }
 
-int mlbin_move_left(int device)
+JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveLeft(JNIEnv* env, jobject obj,jint device )
 {
 	if (device == -1) {
 		int i;
@@ -164,7 +164,7 @@ int mlbin_move_left(int device)
 	return 0;
 }
 
-int mlbin_move_right(int device)
+JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveRight(JNIEnv* env, jobject obj,jint device )
 {
 	if (device == -1) {
 		int i;
@@ -181,7 +181,7 @@ int mlbin_move_right(int device)
 	return 0;
 }
 
-int mlbin_move_up(int device)
+JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveUp(JNIEnv* env, jobject obj,jint device )
 {
 	if (device == -1) {
 		int i;
@@ -198,7 +198,7 @@ int mlbin_move_up(int device)
 	return 0;
 }
 
-int mlbin_stop(void)
+JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinStop(JNIEnv* env, jobject obj)
 {
 	unsigned char data[] = {0x5f, ML_ACTION_STOP, 0xe0, 0xff, 0xfe};
 	int i;
@@ -209,12 +209,12 @@ int mlbin_stop(void)
 	return 0;
 }
 
-int mlbin_count_devices(void)
+JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinCountDevices(JNIEnv* env, jobject obj)
 {
 	return nbr_device;
 }
 
-int main(void)
+JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_main(JNIEnv* env, jobject obj)
 {
 	int ret;
 	char dir;
