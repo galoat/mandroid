@@ -4,7 +4,8 @@ LOCAL_SRC_FILES := $(call all-java-files-under,java)
 LOCAL_MODULE_TAGS := optional 
 LOCAL_MODULE := com.mandroid.Missile
 include $(BUILD_JAVA_LIBRARY)
-include $(CLEARVARS)
+
+include $(CLEAR_VARS)
 LOCAL_MODULE := com.mandroid.Missile.xml
 LOCAL_MODULE_TAGS := optional
 LOCAL_SRC_FILES :=$(LOCAL_MODULE)

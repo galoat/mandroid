@@ -15,7 +15,8 @@
 #define ML_ACTION_STOP			0x0
 
 static struct libusb_device_handle *devh;
-JNIEXPORT jint JNICALL Java_com_mandroid_libMis_Missile_mlbinInitUsb(JNIEnv* envi,jobject obj)
+
+int mlbin_init_usb(void)
 {
 	libusb_device **list;
 	libusb_device *device = NULL;
@@ -82,8 +83,8 @@ list_error:
 error:
 	exit(1);
 }
-JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinFreeUsb(JNIEnv* env, jobject obj)
 
+int mlbin_free_usb(void)
 {
 	libusb_release_interface(devh, 0);
 	libusb_close(devh);
@@ -92,7 +93,7 @@ JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinFreeUsb(JNIEnv* en
 	return 0;
 }
 
-JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinFire(JNIEnv* env, jobject obj)
+int mlbin_fire(void)
 {
 	unsigned char data[] = {0x5f, ML_ACTION_FIRE, 0xe0, 0xff, 0xfe};
 	libusb_control_transfer(devh, 0x21, 0x09, 0, 0, data, 5, 300);
@@ -101,7 +102,7 @@ JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinFire(JNIEnv* env, 
 	return 0;
 }
 
-JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveDown(JNIEnv* env, jobject obj)
+int mlbin_move_down(void)
 {
 	unsigned char data[] = {0x5f, ML_ACTION_MOVE_DOWN, 0xe0, 0xff, 0xfe};
 	libusb_control_transfer(devh, 0x21, 0x09, 0, 0, data, 5, 300);
@@ -110,7 +111,7 @@ JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveDown(JNIEnv* e
 	return 0;
 }
 
-JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveLeft(JNIEnv* env, jobject obj )
+int mlbin_move_left(void)
 {
 	unsigned char data[] = {0x5f, ML_ACTION_MOVE_LEFT, 0xe0, 0xff, 0xfe};
 	libusb_control_transfer(devh, 0x21, 0x09, 0, 0, data, 5, 300);
@@ -119,7 +120,7 @@ JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveLeft(JNIEnv* e
 	return 0;
 }
 
-JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveRight(JNIEnv* env, jobject obj )
+int mlbin_move_right(void)
 {
 	unsigned char data[] = {0x5f, ML_ACTION_MOVE_RIGHT, 0xe0, 0xff, 0xfe};
 	libusb_control_transfer(devh, 0x21, 0x09, 0, 0, data, 5, 300);
@@ -128,7 +129,7 @@ JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveRight(JNIEnv* 
 	return 0;
 }
 
-JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveUp(JNIEnv* env, jobject obj )
+int mlbin_move_up(void)
 {
 	unsigned char data[] = {0x5f, ML_ACTION_MOVE_UP, 0xe0, 0xff, 0xfe};
 	libusb_control_transfer(devh, 0x21, 0x09, 0, 0, data, 5, 300);
@@ -137,7 +138,7 @@ JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveUp(JNIEnv* env
 	return 0;
 }
 
-JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinStop(JNIEnv* env, jobject obj)
+int mlbin_stop(void)
 {
 	unsigned char data[] = {0x5f, ML_ACTION_STOP, 0xe0, 0xff, 0xfe};
 	libusb_control_transfer(devh, 0x21, 0x09, 0, 0, data, 5, 300);
@@ -145,7 +146,7 @@ JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinStop(JNIEnv* env, 
 	printf("Stop!\n");
 	return 0;
 }
-/*
+
 int main(void)
 {
 	int ret;
@@ -187,4 +188,4 @@ int main(void)
 	mlbin_free_usb();
 
 	return 0;
-}*/
+}

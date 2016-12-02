@@ -15,5 +15,5 @@ PRODUCT_PACKAGES +=	libusb\
 			libcutils\
 			testLibUSB\
 			libmis-jni\
-			 com.mandroid.Missile \
+			com.mandroid.Missile \
 			com.mandroid.Missile.xml

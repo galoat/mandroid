@@ -2,7 +2,7 @@ package com.mandroid.Missile;
 
 public class Missile{
 	static{
-		System.loadLibrary("libmis-jni");
+		System.loadLibrary("mis-jni");
 	}
 	public native int mlbinInitUsb();
 	public native int mlbinFreeUsb();

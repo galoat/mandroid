@@ -1,0 +1,3 @@
+<permissions>
+	<library name="com.mandroid.Missile.Missile" file="/system/framwork/com/mandroid/Missile/Missile.jar" />
+</permissions>
