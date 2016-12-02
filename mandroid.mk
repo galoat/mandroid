@@ -10,5 +10,10 @@ PRODUCT_MODEL:= Android
 PRODUCT_PACKAGE_OVERLAYS:= device/utbm/mandroid/overlay
 PRODUCT_COPY_FILES+= device/utbm/mandroid/bootanimation.zip:/system/media/bootanimation.zip
 
-PRODUCT_PACKAGES += com.mandroid.Missile \
+PRODUCT_PACKAGES +=	libusb\
+			libutils\
+			libcutils\
+			testLibUSB\
+			libmis-jni\
+			 com.mandroid.Missile \
 			com.mandroid.Missile.xml

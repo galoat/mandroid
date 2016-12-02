@@ -21,7 +21,7 @@
 #ifndef LIBUSBI_H
 #define LIBUSBI_H
 
-#include "os/config.h"
+#include "config.h"
 
 #include <stddef.h>
 #include <stdint.h>

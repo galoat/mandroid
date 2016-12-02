@@ -1,6 +1,7 @@
 LOCAL_PATH := $(call my-dir)
 include $(CLEAR_VARS)
-commonSources:=  libusb/io.c \
+commonSources:= libusb/config.h\
+		 libusb/io.c \
                   libusb/core.c \
                   libusb/sync.c \
                   libusb/descriptor.c \
