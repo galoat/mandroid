@@ -8,6 +8,6 @@ JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveUp(JNIEnv* env
 JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveLeft(JNIEnv* env, jobject obj );
 JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinMoveRight(JNIEnv* env, jobject obj );
 JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinStop(JNIEnv* env, jobject obj);
-JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_mlbinCountDevices(JNIEnv* env, jobject obj);
+ 
 JNIEXPORT jint JNICALL  Java_com_mandroid_libMis_Missile_main(JNIEnv* env, jobject obj);
 

@@ -1,0 +1,3 @@
+<permissions>
+	<library name="com.mandroid.libMis" file="/system/framwork/com.mandroid.libMis.jar" />
+</permissions>

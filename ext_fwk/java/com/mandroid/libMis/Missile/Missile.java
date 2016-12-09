@@ -1,4 +1,4 @@
-package com.mandroid.Missile;
+package com.mandroid.libMis;
 
 public class Missile{
 	static{
@@ -12,7 +12,6 @@ public class Missile{
 	public native int mlbinMoveLeft();
 	public native int mlbinMoveRight();
 	public native int mlbinStop();
-	public native int mlbinCountDevices();
 	
 	public Missile(){}
  
